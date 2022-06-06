@@ -1,4 +1,8 @@
-
 body{
      background-color: black;  /* for my eyes. Delete if needed */
+}
+
+#getWeather{
+    width: 120px;
+    height: 30px;
 }

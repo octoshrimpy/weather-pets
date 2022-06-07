@@ -8,7 +8,8 @@ class GrabWeather {
         this.celsiusLow
         this.fahrenheit
         this.fahrenheitHigh
-        this.fahrenheitLow
+        this.fahrenheitLow 
+        this.weatherDescription
     }
     async fetchData(){
         try {
@@ -17,7 +18,6 @@ class GrabWeather {
             const data = await res.json()
             console.log(data)
             return data
-            // return ((await fetch(userLocation)).json())
         } catch (error) {
             console.log(error)
         }
@@ -39,11 +39,18 @@ class GrabWeather {
         console.log('fahrenheit: ',this.fahrenheit, this.fahrenheitHigh, this.fahrenheitLow)
     }
 
+    async getWeatherDescription(){
+        let allData = await this.fetchData()
+        this.weatherDescription = allData.weather[0].main
+        console.log(this.weatherDescription)
+    }
+
     setLocation(){
         state = document.querySelector('#state').value.toLowerCase()
         city = document.querySelector('#city').value.toLowerCase()
         userWeather.makeCelsius()
         userWeather.makeFahrenheit()
+        userWeather.getWeatherDescription()
 
     }
 }
@@ -53,3 +60,4 @@ let userWeather = new GrabWeather
 let getWeatherButton = document.getElementById("getWeather")
 
 getWeatherButton.addEventListener('click', userWeather.setLocation);
+

@@ -1,6 +1,14 @@
 # README
 _cute opinionated weather app, with temperature-relating pets_
 
+
+## ideas
+
+- [full-height bgs](https://static.collectui.com/shots/3598361/1-large)
+- [cool clip paths](https://static.collectui.com/shots/3014679/weather-app-%E4%BB%B0%E5%85%89-large) 
+- [switch to cards as user changes locations](https://static.collectui.com/shots/2817827/weather-app-ui-large)
+- [temp graph and current path along](https://static.collectui.com/shots/3372796/wearther-app-large)
+- [incorporate current weather into the background](https://static.collectui.com/shots/3377843/weather-large)
 ---
 
 ## MVP 
@@ -15,6 +23,7 @@ _cute opinionated weather app, with temperature-relating pets_
 
 - [ ] UI
     - [ ] finalize list of pages
+    - [ ] do something with flowers
 
 - [?] settings?
     - [ ] light/dark mode

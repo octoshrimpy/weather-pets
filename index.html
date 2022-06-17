@@ -9,18 +9,46 @@
   </head>
   <body>
     <div class="geoAsk">
-      <input id="city" type="text" placeholder="City" value="orem" />
-      <input id="state" type="text" placeholder="State" value="utah"/>
+      <label for="postalCode">Enter Postal Code</label>
+      <input id="postalCode" type="text" placeholder="Postal Code" value="80226" />
+      <form>
+        <label for="fahrRadio">Fahrenheit</label>
+        <input id="fahrRadio" type="radio" name="tempSelect" checked>
+        <label for="celRadio">Celsius</label>
+        <input id="celRadio" type="radio" name="tempSelect">
+      </form>
       <button type="button" id="getWeather">Show Weather!</button>
     </div>
     <div class="showData">
-      <div class="current">
-        <div class="location"></div>
-        <div class="icon"></div>
-        <div class="high"></div>
-        <div class="low"></div>
-        <div class="current"></div>
-        <div class="status"></div>
+      <div class="currentDay">
+        <span class="location"></span>
+        <span class="icon"></span>
+        <span class="high"></span>
+        <span class="low"></span>
+        <span class="current"></span>
+        <span class="description"></span>
+      </div>
+      <div class="dailyForecast">
+        <div class="day2temps">
+          <span class="day2"></span>
+          <span class="day2High"></span>
+          <span class="day2Low"></span>
+        </div>
+        <div class="day3temps">
+          <span class="day3"></span>
+          <span class="day3High"></span>
+          <span class="day3Low"></span>
+        </div>
+        <div class="day4temps">
+          <span class="day4"></span>
+          <span class="day4High"></span>
+          <span class="day4Low"></span>
+        </div>
+        <div class="day5temps">
+          <span class="day5"></span>
+          <span class="day5High"></span>
+          <span class="day5Low"></span>
+        </div>
       </div>
     </div>
 

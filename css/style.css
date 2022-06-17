@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: rgb(144, 144, 144);
   /* for my eyes. Delete if needed */
 }
 
@@ -20,3 +20,4 @@ body {
 .geoAsk.show {
   display: flex;
 }/*# sourceMappingURL=style.css.map */
+

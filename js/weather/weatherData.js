@@ -10,6 +10,7 @@ class GrabWeather {
 	this.postalCode
 	this.ForecastFahrenheit
 	this.ForecastCelsius
+	this.dates
   }
   async fetchData(postalCode = this.postalCode) {
 		try {
@@ -50,6 +51,21 @@ class GrabWeather {
 			low: fahrenheitLow
 		}
   }
+
+	getDate(main){
+		let dateToday = main.days[0].datetime
+		let date2 = main.days[1].datetime
+		let date3 = main.days[2].datetime
+		let date4 = main.days[3].datetime
+		let date5 = main.days[4].datetime
+		return {
+			dateToday: dateToday,
+			date2: date2,
+			date3: date3,
+			date4: date4,
+			date5: date5
+		}
+	}
 
 	getForecastFahrenheit(main){
 		let day2        = Math.round(main.days[1].temp)
@@ -116,6 +132,7 @@ class GrabWeather {
 		this.weatherDescription = allData.description
 		this.ForecastFahrenheit = this.getForecastFahrenheit(allData)
 		this.ForecastCelsius = this.getForecastCelsius(allData)
+		this.dates = this.getDate(allData)
 		console.log('this',this)
 		return this
   }
@@ -154,6 +171,17 @@ function setScreenVars(weather) {
 	let day5 = document.querySelector('.day5')
 	let day5High = document.querySelector('.day5High')
 	let day5Low = document.querySelector('.day5Low')
+	let currentDate = document.querySelector('.currentDate')
+	let date2 = document.querySelector('.date2')
+	let date3 = document.querySelector('.date3')
+	let date4 = document.querySelector('.date4')
+	let date5 = document.querySelector('.date5')
+	currentDate.innerText = weather.dates.dateToday
+	date2.innerText = weather.dates.date2
+	console.log(weather.dates.date3)
+	date3.innerText = weather.dates.date3
+	date4.innerText = weather.dates.date4
+	date5.innerText = weather.dates.date5
 
 	if(document.querySelector('#fahrRadio').checked){
 		elm_current.innerText = weather.fahrenheit.current

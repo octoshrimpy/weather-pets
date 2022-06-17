@@ -1,8 +1,22 @@
-body{
-     background-color: black;  /* for my eyes. Delete if needed */
+body {
+  background-color: black;
+  /* for my eyes. Delete if needed */
 }
 
-#getWeather{
-    width: 120px;
-    height: 30px;
+#getWeather {
+  width: 120px;
+  height: 30px;
 }
+
+.geoAsk {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+.geoAsk button {
+  margin-top: 2rem;
+}
+.geoAsk.show {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */

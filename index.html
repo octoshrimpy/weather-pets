@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Pets</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-    <input id="city" type="text" placeholder="City">
-    <br>
-    <input id="state" type="text" placeholder="State">
-    <br>
-    <button type="button" id="getWeather">Show Weather!</button>
-
-
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="geoAsk">
+      <input id="city" type="text" placeholder="City" value="orem" />
+      <input id="state" type="text" placeholder="State" value="utah"/>
+      <button type="button" id="getWeather">Show Weather!</button>
+    </div>
+    <div class="showData">
+      <div class="current">
+        <div class="location"></div>
+        <div class="icon"></div>
+        <div class="high"></div>
+        <div class="low"></div>
+        <div class="current"></div>
+        <div class="status"></div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="js/weather/weatherData.js"></script>
-</body>
+  </body>
 </html>

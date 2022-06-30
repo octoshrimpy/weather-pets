@@ -1,30 +1,19 @@
 
 class Pet {
-  temperatureC
+  temperatureC 
   temperatureF
   constructor(){
 
   }
-
   async getWeather(){
     let data = await userWeather.getWeather()
     this.temperatureF = Number(data.fahrenheit.current)
-  }
-  printData(){
-    let quipArea = document.querySelector('#quipArea')
-    if(this.temperatureF > 60){
-      quipArea.innerText = "Hot hot hot! " + this.temperatureF
-    }else{
-      quipArea.innerText = "Cold cold cold! " + this.temperatureF
-    }    
+    this.temperatureC = (this.temperatureF -32) * 5/9
   }
   async run(){
     console.log(this.petName)
     await this.getWeather()
-    this.printData()
-    console.log('I HATE IT', this.hateWeather)
-  }
-  
+  } 
 }
 
 class desertType extends Pet{
@@ -60,14 +49,19 @@ class Snake extends desertType{
     await this.setHateWeather()
     if(this.temperatureF > this.hateWeather && this.temperatureF > this.t){
       console.log(this.hateQuip)
-    }else if(this.temperatureF < this.hateWeather && this.temperatureF < this.t){
-      console.log(this.hateQuip)
+      this.lastQuip = this.hateQuip
     }else if(this.loveWeather.indexOf(this.temperatureF) != -1){
       console.log(this.loveQuip)
+      this.lastQuip = this.loveQuip
     }else if(this.likeWeather.indexOf(this.temperatureF) != -1){
       console.log(this.likeQuip)
+      this.lastQuip = this.likeQuip
     }else if(this.dislikeWeather.indexOf(this.temperatureF) != -1){
       console.log(this.dislikeQuip)
+      this.lastQuip = this.dislikeQuip
+    }else if(this.temperatureF < this.hateWeather && this.temperatureF < this.t){
+      console.log(this.hateQuip)
+      this.lastQuip = this.hateQuip
     }else{
       console.log(this.hateWeather, this.temperatureF)
     }
@@ -80,4 +74,3 @@ frog.makeQuip()
 
 
 // window.onload = runIt()
-

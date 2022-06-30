@@ -148,9 +148,11 @@ let getWeatherButton = document.getElementById("getWeather")
 
 getWeatherButton.addEventListener("click", run.bind(userWeather))
 
-window.onload = ()=>{
+function showAllData(){
   run.call(userWeather)
 }
+
+window.onload = showAllData()
 
 function setScreenVars(weather) {
   let elm_loc = document.querySelector('.location')
@@ -226,3 +228,5 @@ async function run() {
   let weather = await userWeather.getWeather()
   setScreenVars(weather)
 }
+
+
